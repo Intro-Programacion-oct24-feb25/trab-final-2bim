@@ -5,68 +5,94 @@
 
 ### Problemática a resolver
 
-* Generar una solución en algoritmo/miniespecificación/diagrama
+Generar una solución en algoritmo/miniespecificación/diagrama para el siguiente problema:
 
-Que permita ingresar nuevas cuentas personales de diversas plataformas. Las plataformas son:
+El objetivo es diseñar un sistema para registrar a nuevos participantes en las actividades de un club deportivo llamado "El deporte para la vida"
 
-- **Whatsapp** (se necesita los siguientes datos: nombre de usuario, número de teléfono, edad, ciudad, país)
-- **Telegram** (se necesita los siguientes datos: nombre de usuario, número de teléfono, ciudad, país, área de interés)
-- **Signal** (se necesita los siguientes datos: nombre de usuario, número de teléfono, ciudad, país, hobby principal)
-- **Instagram** (se necesita los siguientes datos: nombre de usuario, ciudad, edad, correo electrónico)
-- **Facebook** (se necesita los siguientes datos: nombre de usuario, edad, ciudad, país, correo electrónico)
-- **Twitter** (se necesita los siguientes datos: nombre de usuario, nombres, apellidos, edad, ciudad, país, idioma, correo electrónico)
-- **Flickr** (se necesita los siguientes datos: nombre de usuario, correo electrónico)
+Las actividades que se brindan en la club son: Fútbol, Natación, Atletismo, Básquetbol, Ciclismo, Tenis, Yoga.
+
+Los datos requeridos para cada actividad son:
+* Fútbol:
+    * Datos: Nombre del participante, edad, posición preferida, ciudad, equipo favorito.
+
+* Natación:
+    * Datos: Nombre del participante, edad, nivel (principiante, intermedio, avanzado), ciudad, estilo favorito.
+
+* Atletismo:
+    * Datos: Nombre del participante, edad, especialidad (carreras, salto, lanzamiento), ciudad, récord personal.
+
+* Básquetbol:
+    * Datos: Nombre del participante, edad, posición preferida, estatura, ciudad.
+
+* Ciclismo:
+    * Datos: Nombre del participante, edad, tipo de ciclismo (montaña, ruta, urbano), ciudad, marca de bicicleta preferida.
+
+* Tenis:
+    * Datos: Nombre del participante, edad, nivel (principiante, intermedio, avanzado), ciudad, mano hábil (derecha/izquierda).
+
+* Yoga:
+    * Datos: Nombre del participante, edad, nivel (principiante, intermedio, avanzado), ciudad, estilo de yoga preferido.
+
+
 
 La aplicación debe tener los siguientes procedimientos, indicar que los procedimientos no tienen parámetros y cada uno de ellos en su cuerpo pedirá la información necesaria:
 
 - función principal
-- función crearFacebook
-- función crearWhatsapp
-- función crearTelegram
-- función crearSignal
-- función crearInstagram
-- función crearFlickr
+- función registrarParticipanteFutbol
+- función registrarParticipanteNatacion
+- función registrarParticipanteAtletismo
+- función registrarParticipanteBasquetbol
+- función registrarParticipanteCiclismo
+- función registrarParticipanteTenis
+- función registrarParticipanteYoga
 
 En la **función principal** se presenta un ciclo repetitivo que indica un menú de opciones:
 
-- Si se ingresa 1 se llamará a crearWhatsapp
-- Si se ingresa 2 se llamará a crearTelegram
-- Si se ingresa 3 se llamará a crearSignal
-- Si se ingresa 4 se llamará a crearInstagram
-- Si se ingresa 5 se llamará a crearFacebook
-- Si se ingresa 6 se llamará a crearTwitter
-- Si se ingresa 7 se llamará a crearFlickr
-- Si se ingresa algo diferente de 1,2,3,4,5,6,7; se debe presentar un mensaje en pantalla: "error en opción seleccionada"
+- Si se ingresa 1 se llamará a registrarParticipanteFutbol
+- Si se ingresa 2 se llamará a registrarParticipanteNatacion
+- Si se ingresa 3 se llamará a registrarParticipanteAtletismo
+- Si se ingresa 4 se llamará a registrarParticipanteBasquetbol
+- Si se ingresa 5 se llamará a registrarParticipanteCiclismo
+- Si se ingresa 6 se llamará a registrarParticipanteTenis
+- Si se ingresa 7 se llamará a registrarParticipanteYoga
+- Si se ingresa algo diferente de 1,2,3,4,5,6,7; se debe presentar un mensaje en pantalla: "lo sentimos, el club no tiene esa opción."
 
->En cada iteración del ciclo; se pregunta al usuario si se desea salir del ciclo.
+  >En cada iteración del ciclo; se pregunta al usuario si se desea salir del ciclo.
 
-Cada procedimiento debe imprimir un resumen de la cuenta creada con todos los valores ingresados
+Cada procedimiento debe imprimir un resumen de las actividad creada con todos los valores ingresados.
 
-**Cuando el usuario termina el ciclo repetitivo** se debe presentar un mensaje con base al número total de cuentas creadas. Se debe usar el número total de cuentas como argumento (entero) de una función llamada obtenerInformacion.
+**Considerandos importantes:**
 
-- En la función obtenerInformacion existe un parámetro. El mensaje se forma de la siguiente manera:
-```
-Se usa el siguiente arreglo unidimensional:  
+  * **Cuando el usuario termina el ciclo repetitivo** se debe presentar un mensaje con base al número total de actividades creadas. Se debe usar el número total de actividades como argumento (entero) de una función llamada obtenerInformacion. En la función obtenerInformacion existe un parámetro. El mensaje se forma de la siguiente manera:  
 
-(mensajeFinal(3),x(300)[{a-z}, {A-Z}, {BS}])
+  a. Si el número de cuentas creadas está en el rango de 1 a 5 el mensaje será: **Poca participación en el club, hay que mejorar**
 
-Los datos asignados al arreglo son:
+  b. Si el número de cuentas creadas está en el rango de 6 a 15 el mensaje será: **Buena participación, sigan así.**
 
-mensajeFinal <-- {"Campaña con poca afluencia", "Campaña moderada siga adelante", "Excelente campaña", "Mala campaña"}
-```
+  c. Si el número de cuentas creadas está en el rango de 16 en adelante, el mensaje será: **Excelente campaña del club.**
 
-a. Si el número de cuentas creadas está en el rango de 1 a 5 el mensaje será: **Campaña con poca afluencia**
+  d. Si el número de cuentas creadas es igual a 0, el mensaje será: **Mala campaña, debemos mejorar**
 
-b. Si el número de cuentas creadas está en el rango de 6 a 15 el mensaje será: **Campaña moderada siga adelante**
+  * **Cuando el usuario terminan el ciclo repetitivo** de debe llamar a una función que se llame obtenerReporte, mismo que debe tener dos parámetros (un arreglo de cadenas y un arreglo de enteros); con base a ello, se debe generar una cadena que tenga la siguiente estructura, como ejemplo:
 
-c. Si el número de cuentas creadas está en el rango de 16 en adelante, el mensaje será: **Excelente campaña**
+  ```
 
-d. Si el número de cuentas creadas es igual a 0, el mensaje será: **Mala campaña**
+  Las actividades ingresadas son:
+  1. Número de Participantes de Fútbol: 3
+  2. Número de Participantes de Natación: 2
+  3. Número de Participantes de Atletismo: 1
+  4. Número de Participantes de Basquetbol: 3
+  5. Número de Participantes de Ciclismo: 5
+  6. Número de Participantes de Tenis: 2
+  7. Número de Participantes de Yoga: 4
+
+  ```
+
+***
 
 ### Presentación del trabajo final
 - En la carpeta **algoritmo**, se debe generar los posibles pasos, únicamente del procedimiento **principal**; usar un archivo llamado paso.txt
 - En la carpeta **miniespecificacion**, un solo archivo llamado solucion.txt con la miniespecificación de la solución.
 - En la carpeta **diagrama**, se debe generar un (solo 1) diagrama de flujo del procedimiento **principal**.
-
 
 ***
