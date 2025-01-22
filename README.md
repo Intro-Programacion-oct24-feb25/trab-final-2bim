@@ -5,7 +5,7 @@
 
 ### Problemática a resolver
 
-Generar una solución en algoritmo/miniespecificación/diagrama para el siguiente problema:
+Generar una solución en Java y Python:
 
 El objetivo es diseñar un sistema para registrar a nuevos participantes en las actividades de un club deportivo llamado "El deporte para la vida"
 
@@ -89,10 +89,18 @@ Cada procedimiento debe imprimir un resumen de las actividad creada con todos lo
   ```
 
 ***
+### Importante
 
+Se debe usar una variable acumuladora global, que permita presentar en pantalla todos los datos ingresados de los participantes.
+***
+
+### Importante para Java
+
+- Debe usar al menos 6 paquetes en total.
+
+***
 ### Presentación del trabajo final
-- En la carpeta **algoritmo**, se debe generar los posibles pasos, únicamente del procedimiento **principal**; usar un archivo llamado paso.txt
-- En la carpeta **miniespecificacion**, un solo archivo llamado solucion.txt con la miniespecificación de la solución.
-- En la carpeta **diagrama**, se debe generar un (solo 1) diagrama de flujo del procedimiento **principal**.
+- En la carpeta proyecto_java, debe crear un proyecto de Netbeans. En dicho proyecto se debe generar la solución.
+- En la carpeta proyecto_python, debe crear un proyecto solución para Python.
 
 ***
