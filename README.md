@@ -91,7 +91,7 @@ Cada procedimiento debe imprimir un resumen de las actividad creada con todos lo
 ***
 ### Importante
 
-Se debe usar una variable acumuladora global, que permita presentar en pantalla todos los datos ingresados de los participantes.
+Se debe usar una variable acumuladora global, que permita presentar en pantalla todos los datos ingresados de los participantes, cuando se termine el ciclo repetitivo.
 ***
 
 ### Importante para Java
